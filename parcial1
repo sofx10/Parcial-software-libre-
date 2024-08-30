@@ -1,0 +1,78 @@
+NTEGRANTES:
+
+Katia Guadalupe Orellana Romero
+Placido Ismael Luna Argueta
+Sofia Gissell Hernández Ascencio
+
+NOMBRE DEL EQUIPO:
+
+Equipo CANELOS
+
+COMADOS PARTE 2:
+
+Creamos los directorios UGB/2024/ciclo1/ciclo2 
+
+Comando: mkdir UGB/2024/ciclo1/ciclo2 
+
+Creamos dentro del directorio de ciclo2 los directorios: softwarelibre/NombreEq
+
+Comando: mkdir  UGB/2024/ciclo2/softwarelibre/NombreEq
+
+Dentro de NombreEq, creamos el archivo canelos.txt, donde agregamos los nombre de los integrantes del grupo.
+
+Comando: nano UGB/2024/ciclo2/softwarelibre/NombreEq/canelos.txt 
+
+Verificamos el sistema de archivos:
+
+Comando: tree/home
+
+COMADOS PARTE 3:
+
+Abrimos el archivo de repositorios en el editor de texto con el siguiente código:
+
+Comando: nano /etc/apt/sources.list y copiamos los siguientes repositorios:
+ 
+
+deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
+
+deb http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
+deb-src http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
+
+deb http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware
+
+
+Revisamos los repositorios actualizados:
+
+Comando: cat /etc/apt/sources.list'  
+
+Actualizamos las base de datos de los repositorios:
+
+Comando: apt upgrade
+
+Actualizaciones de los paquetes de los repositorios:
+Comando: apt update 
+
+
+Instalamos los servicios Nginx, Docker y Squid:
+
+Comandos: 
+apt install nginx 
+apt install docker.io
+apt install squid 
+
+Revisamos los servicios:
+
+Comandos:
+systemctl list-unit-files --type service --all
+
+Detuvimos los servicios: 
+Comandos: 
+systemctl stop nginx.service
+systemctl stop squid.service
+systemctl stop docker.service 
+
+Revisamos los servicios:
+Comandos:
+systemctl list-unit-files --type service --all
